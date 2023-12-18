@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Emotion Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .back-button {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: #5bacdf;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-transform: uppercase;
+        }
+
+        .back-button:hover {
+            background-color: #8256c9;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.history.back()"><b>Back</b></button>
+    <h1>Text Emotion Input</h1>
+    <form method="POST" onsubmit="return validateForm();">
+        <textarea name="input_text" id="input_text" rows="4" cols="50" placeholder="Enter text" oninput="toggleSubmitButton()"></textarea><br><br>
+        <input type="submit" value="Predict Emotion" id="submit_button" style="display: none;">
+    </form>
+
+    <script>
+        function toggleSubmitButton() {
+            var textarea = document.getElementById('input_text');
+            var submitButton = document.getElementById('submit_button');
+
+            if (textarea.value.trim() !== '') {
+                submitButton.style.display = 'block';
+            } else {
+                submitButton.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

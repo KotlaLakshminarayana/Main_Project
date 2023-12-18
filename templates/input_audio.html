@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Emotion Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        label {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
+
+        label:hover {
+            background-color: #0056b3;
+        }
+
+        .file-input-label {
+            font-size: 18px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: none;
+        }
+
+        .status {
+            margin-top: 20px;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f1f1f1;
+            padding: 10px;
+            border: 1px solid #888;
+            z-index: 1;
+            max-width: 300px;
+        }
+
+        .popup-text {
+            display: block;
+            text-align: center;
+            font-weight: bold;
+        }
+        .back-button {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: #5bacdf;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-transform: uppercase;
+        }
+
+        .back-button:hover {
+            background-color: #8256c9;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.history.back()"><b>Back</b></button>
+    <h1>Audio Emotion Input</h1>
+    <form method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+        <input type="file" name="audio" accept=".wav, .mp3" id="fileInput">
+        <label for="fileInput" class="file-input-label">Choose an Audio File</label><br><br>
+        <input type="submit" value="Predict Emotion" id="submit_button">
+    </form>
+    <div class="status" id="uploadStatus"></div>
+
+    <!-- Pop-up for error message -->
+    <div id="error-popup" class="popup">
+        <span class="popup-text" id="error-message"></span>
+    </div>
+
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function () {
+            const fileInput = document.getElementById('fileInput');
+            const uploadStatus = document.getElementById('uploadStatus');
+            const submitButton = document.getElementById('submit_button');
+            
+            if (fileInput.files.length > 0) {
+                const fileName = fileInput.files[0].name;
+                uploadStatus.innerText = `File selected: ${fileName}`;
+                submitButton.style.display = 'block';
+            } else {
+                uploadStatus.innerText = '';
+                submitButton.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

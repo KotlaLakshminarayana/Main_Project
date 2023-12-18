@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emotion Recognition Result</title>
+    <style>
+        body {
+            background-color: #f0f0f0; 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+        }
+
+        h1 {
+            color: #333; 
+            background-color: #64bcf4; 
+            padding: 20px; 
+            border-radius: 10px; 
+        }
+
+        p {
+            font-size: 24px; 
+            margin-top: 20px; 
+        }
+        .back-button {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: #5bacdf;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-transform: uppercase;
+        }
+
+        .back-button:hover {
+            background-color: #8256c9;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.history.back()"><b>Back</b></button>
+    <h1>Emotion Recognition Result</h1>
+    <p>Predicted Emotion: {{ emotion }}</p>
+</body>
+</html>

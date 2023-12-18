@@ -1,0 +1,205 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Model</title>
+    <style>
+        h1 {
+            font-size: 28px;
+            color: #333; 
+            text-align: center; 
+            margin-bottom: 20px; 
+        }
+    </style>
+</head>
+<style>
+.button-container {
+            display: flex;
+            gap:20px;
+        }
+    
+        .button {
+            flex: 0 0 calc(30% - 20px); 
+            margin-right: 10px; 
+            margin-left: 80px; 
+        }
+    
+        .button button {
+            top:40%;
+            display: block;
+            padding: 20px;
+            text-align: center;
+            background-color: #f0f0f0;
+            border: 2px solid #f0f0f0; 
+            border-radius:10%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            position: relative; 
+        }
+    
+        .button button img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px; 
+        }
+    
+        .button button .button-text {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            color:#f0f0f0;
+            font-size: 40px;
+            font-weight:bold;
+            transform: translate(-50%, -50%);
+            opacity: 0; 
+            pointer-events: none; 
+        }
+    
+        .button button:hover {
+            background-color: #8256c9; 
+        }
+    
+        .button button:hover .button-text {
+            opacity: 1;
+        }
+</style>
+<body>
+    <h1>Select an Emotion Recognition Model</h1>
+    <div class="button-container">
+        <div class="button">
+            <button onclick="location.href='/input_text'">
+                <img src="/static/images/text-format.png" alt="Text Emotion Recognition">
+                <span class="button-text">Text Emotion Recognition</span>
+            </button>
+        </div>
+        <div class="button">
+            <button onclick="location.href='/input_audio'">
+                <img src="/static/images/podcast.png" alt="Audio Emotion Recognition">
+                <span class="button-text">Audio Emotion Recognition</span>
+            </button>
+        </div>
+        <div class="button">
+            <button onclick="location.href='/input_video'">
+                <img src="/static/images/video-camera.png" alt="Video Emotion Recognition">
+                <span class="button-text">Video Emotion Recognition</span>
+            </button>
+        </div>
+    </div>
+</body>
+</html>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Select Model</title>
+     <style>
+         h1 {
+             font-size: 28px;
+             color: #333;
+             text-align: center;
+             margin-bottom: 20px;
+         }
+         .back-button {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: #5bacdf;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-transform: uppercase;
+        }
+
+        .back-button:hover {
+            background-color: #8256c9;
+            transform: scale(1.05);
+        }
+     </style>
+ </head>
+ <style>
+ .button-container {
+             display: flex;
+             gap:20px;
+         }
+     
+         .button {
+             flex: 0 0 calc(30% - 20px);
+             margin-right: 10px;
+             margin-left: 80px;
+         }
+     
+         .button button {
+             top:40%;
+             display: block;
+             padding: 20px;
+             text-align: center;
+             background-color: #f0f0f0;
+             border: 2px solid #f0f0f0;
+             border-radius:10%;
+             cursor: pointer;
+             transition: background-color 0.3s ease;
+             position: relative;
+         }
+     
+         .button button img {
+             max-width: 100%;
+             height: auto;
+             margin-bottom: 10px;
+         }
+     
+         .button button .button-text {
+             position: absolute;
+             top: 70%;
+             left: 50%;
+             color:#f0f0f0;
+             font-size: 40px;
+             font-weight:bold;
+             transform: translate(-50%, -50%);
+             opacity: 0;
+             pointer-events: none;
+         }
+     
+         .button button:hover {
+             background-color: #8256c9;
+         }
+     
+         .button button:hover .button-text {
+             opacity: 1;
+         }
+ </style>
+ <body>
+     <button class="back-button" onclick="window.history.back()"><b>Back</b></button>
+     <h1>Select an Emotion Recognition Model</h1>
+     <div class="button-container">
+         <div class="button">
+             <button onclick="location.href='/input_text'">
+                 <img src="/static/images/text-format.png" alt="Text Emotion Recognition">
+                 <span class="button-text">Text Emotion Recognition</span>
+             </button>
+         </div>
+         <div class="button">
+             <button onclick="location.href='/input_audio'">
+                 <img src="/static/images/podcast.png" alt="Audio Emotion Recognition">
+                 <span class="button-text">Audio Emotion Recognition</span>
+             </button>
+         </div>
+         <div class="button">
+             <button onclick="location.href='/input_video'">
+                 <img src="/static/images/video-camera.png" alt="Video Emotion Recognition">
+                 <span class="button-text">Video Emotion Recognition</span>
+             </button>
+         </div>
+     </div>
+ </body>
+ </html>
+ 

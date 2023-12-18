@@ -1,0 +1,494 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.light {
+  --mainColor: #64bcf4;
+  --hoverColor: #5bacdf;
+  --backgroundColor: #f1f8fc;
+  --darkOne: #312f3a;
+  --darkTwo: #45424b;
+  --lightOne: #919191;
+  --lightTwo: #aaa;
+}
+
+.dark {
+  --mainColor: #64bcf4;
+  --hoverColor: #5bacdf;
+  --backgroundColor: #192e3a;
+  --darkOne: #f3f3f3;
+  --darkTwo: #fff;
+  --lightOne: #ccc;
+  --lightTwo: #e7e3e3;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.big-wrapper {
+  position: relative;
+  padding: 1.7rem 0 2rem;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: var(--backgroundColor);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container {
+  position: relative;
+  max-width: 81rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3rem;
+  z-index: 10;
+}
+.overlay {
+  display: none;
+}
+
+.links a {
+  color: var(--lightTwo);
+  margin-left: 4.5rem;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.links a:hover {
+  color: var(--hoverColor);
+  transform: scale(1.05);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.9rem;
+  color: #fff !important;
+  background-color: var(--mainColor);
+  border-radius: 16px;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--hoverColor);
+  transform: scale(1) !important;
+}
+.hamburger-menu {
+  position: relative;
+  z-index: 99;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  display: none;
+}
+
+.hamburger-menu .bar {
+  position: relative;
+  width: 100%;
+  height: 3px;
+  background-color: var(--darkTwo);
+  border-radius: 3px;
+  transition: 0.5s;
+}
+
+.bar::before,
+.bar::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--darkTwo);
+  border-radius: 3px;
+  transition: 0.5s;
+}
+
+.bar::before {
+  transform: translateY(-8px);
+}
+
+.bar::after {
+  transform: translateY(8px);
+}
+
+.big-wrapper.active .hamburger-menu .bar {
+  background-color: transparent;
+}
+
+.big-wrapper.active .bar::before {
+  transform: translateY(0) rotate(-45deg);
+}
+
+.big-wrapper.active .bar::after {
+  transform: translateY(0) rotate(45deg);
+}
+
+.showcase-area .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+}
+
+.big-title {
+  font-size: 1.4rem;
+  color: var(--darkOne);
+  margin: 3.0rem 0 1.5rem;
+  text-transform: capitalize;
+  line-height: 1.4;
+}
+
+.text {
+  color: var(--lightOne);
+  font-size: 1.1rem;
+  margin: 1.5rem 0 2.5rem; 
+  max-width: 600px;
+  line-height: 2.3;
+}
+
+.showcase-area .btn {
+  box-shadow: 0 0 40px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Keep your existing body CSS code here */
+/* Your existing body code remains unchanged */
+
+/* Add this CSS to position the images as desired */
+.person {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+.person img {
+  width:450px;
+  height:450px;
+  top:0%;
+  object-fit: cover;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-top: 0px;
+}
+
+.person-highlight {
+  width: 440px;
+  height: 440px;
+  transform: translate(30%, -50%);
+  /*border: 2px solid #5bacdf;*/
+  z-index: 3;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+}
+
+.person-left{
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  left: 600px; 
+  border: 2px solid #cff;/* Adjust the horizontal position */
+  border-radius: 50%;
+  margin-top: 30px;
+  margin-left: -120px;
+  margin-right: -40px;
+  overflow: hidden;
+ /* Half of the height */
+}
+.person-left img {
+  z-index: 1;
+  width:280px;
+  height:280px;
+  top:-40%;
+  object-fit: cover;
+  margin-left: 0px;
+  margin-right: -130px;
+  margin-top: -5px;
+}
+
+.person-right {
+  position: absolute;
+  width: 290px;
+  height: 290px;
+  border: 2px solid #cff;
+  border-radius: 50%;
+  top: 50%;
+  left: 1100px; /* Adjust the horizontal position */
+  margin-top: -100px; 
+  overflow: hidden;/* Half of the height */
+}
+.person-right img {
+  z-index: 2;
+  width:295px;
+  height:295px;
+  top:-40%;
+  object-fit: cover;
+  margin-left: 0px;
+  margin-right: -90px;
+  margin-top: -10px;
+}
+.toggle-btn {
+  display: inline-block;
+  border: none;
+  background: var(--darkTwo);
+  color: var(--backgroundColor);
+  outline: none;
+  cursor: pointer;
+  height: 39px;
+  width: 39px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+.toggle-btn i {
+  line-height: 39px;
+  left:700px;
+}
+
+.toggle-btn:hover {
+  background: var(--mainColor);
+}
+
+.big-wrapper.light .toggle-btn i:last-child {
+  display: none;
+}
+
+.big-wrapper.light .toggle-btn i:first-child {
+  display: block;
+}
+
+.big-wrapper.dark .toggle-btn i:last-child {
+  display: block;
+}
+
+.big-wrapper.dark .toggle-btn i:first-child {
+  display: none;
+}
+.big-wrapper.dark .c-shape img{
+  background-color:var(--lightOne); /* Invert colors in dark mode */
+}
+.big-wrapper.dark .d-shape img{
+  background-color:var(--lightOne); /* Invert colors in dark mode */
+}
+
+.shape {
+  position: absolute;
+  z-index: 0;
+  width: 500px;
+  bottom: -180px;
+  left: -15px;
+  opacity: 0.3;
+}
+.c-shape {
+  position: absolute;
+  top: -90px;
+  left: -90px;
+  width: 300px; /* Adjust the width to control the size of the semi-circle */
+  height: 300px; /* Adjust the height to control the size of the semi-circle */
+  background-color: var(--mainColor); /* Use your desired background color */
+  border-radius: 60%; /* Create the semi-circle shape */
+  overflow:hidden;
+  z-index: 1;
+  transition: background-color 0.3s ease-in-out;
+  opacity: 0.3;
+}
+.d-shape {
+  position: absolute;
+  top: -90px;
+  left: -90px;
+  width: 250px; /* Adjust the width to control the size of the semi-circle */
+  height:250px; /* Adjust the height to control the size of the semi-circle */
+  background-color: var(--mainColor); /* Use your desired background color */
+  border-radius: 60%; /* Create the semi-circle shape */
+  overflow:hidden;
+  z-index: 1;
+  transition: background-color 0.3s ease-in-out;
+  opacity: 1;
+}
+/* Add this CSS for the wave shape at the right-end of the page */
+.w-shape {
+  position: fixed;
+  top: 90%;
+  right: -5%; /* Adjust the right position as needed */
+  width: 200px; /* Adjust the width of the wave shape */
+  height: 200px; /* Adjust the height of the wave shape */
+  background-color: var(--mainColor); /* Use your desired background color */
+  border-radius: 50%; /* Create a circle shape for the wave */
+  overflow: hidden;
+  z-index: 1;
+  transition: background-color 0.3s ease-in-out;
+  transform: translateY(-50%) rotate(35deg)
+  /* Create a wave shape using a pseudo-element */
+}
+.n-shape {
+  position: fixed;
+  top: 90%;
+  right: -5%; /* Adjust the right position as needed */
+  width: 300px; /* Adjust the width of the wave shape */
+  height: 300px; /* Adjust the height of the wave shape */
+  background-color: var(--mainColor); /* Use your desired background color */
+  border-radius: 50%; /* Create a circle shape for the wave */
+  overflow: hidden;
+  z-index: 1;
+  transition: background-color 0.3s ease-in-out;
+  transform: translateY(-50%) rotate(35deg);
+  opacity: 0.3;
+  /* Create a wave shape using a pseudo-element */
+}
+
+.w-shape::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  transform: scaleY(5);
+}
+
+.copy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  animation: appear 1s 1 both;
+}
+
+@keyframes appear {
+  0% {
+    clip-path: circle(30% at -25% -25%);
+  }
+  100% {
+    clip-path: circle(150% at 0 0);
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    max-width: 450px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--mainColor);
+    z-index: 95;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: 0.5s;
+  }
+
+  .links ul {
+    flex-direction: column;
+  }
+
+  .links a {
+    color: #fff;
+    margin-left: 0;
+    padding: 2rem 0;
+  }
+
+  .links .btn {
+    background: none;
+  }
+
+
+  .big-wrapper.active .links {
+    transform: translateX(0);
+    box-shadow: 0 0 50px 2px rgba(0, 0, 0, 0.4);
+  }
+
+  .big-wrapper.active .overlay {
+    pointer-events: all;
+    opacity: 1;
+  }
+
+  .showcase-area {
+    padding: 2.5rem 0;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .showcase-area .container {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    grid-gap: 2rem;
+  }
+
+  .big-title {
+    font-size: 1.1rem;
+  }
+
+  .text {
+    font-size: 0.95rem;
+    margin: 1.4rem 0 1.5rem;
+  }
+
+  .person {
+    width: 100%;
+    transform: none;
+  }
+
+  .shape {
+    bottom: -180px;
+    left: -150px;
+  }
+  /* .c-shape {
+    bottom: -180px;
+    left: -150px;
+  } */
+}
+
+@media screen and (max-width: 470px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .big-title {
+    font-size: 0.9rem;
+  }
+
+  .text {
+    margin: 1.1rem 0 1.5rem;
+  }
+
+  .showcase-area .btn {
+    font-size: 0.8rem;
+  }
+}
